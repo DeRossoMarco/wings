@@ -25,9 +25,9 @@ for i in range(dim):
 # Build faces
 faces = np.zeros((dim * 2, 3), dtype=int)
 
-for i in range(dim):
-    faces[2 * i] = ([i, (dim + i + 1) % 144, dim + i])
-    faces[2 * i + 1] = ([i, i + 1, (dim + i +1) % 144])
+for i in range(dim - 1):
+    faces[2 * i] = ([i, dim + i + 1, dim + i])
+    faces[2 * i + 1] = ([i, i + 1, dim + i +1])
 
 
 # Create shape
