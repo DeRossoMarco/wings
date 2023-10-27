@@ -30,7 +30,7 @@ addLayers       true;
 
 geometry
 {
-    wing.stl //must be in ../constant/wing.stl
+    wing.stl //must be in ../constant/triSurface/wing.stl
     {
         type triSurfaceMesh;
         name wing;

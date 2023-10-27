@@ -5,7 +5,7 @@ from stl import mesh
 # Define constant
 width = 1.0
 input_file = "mesh/e554.dat"
-output_file = "mesh/wing_profile.stl"
+output_file = "wingsOpenFoam/constant/triSurface/wing.stl"
 
 
 # Import points
