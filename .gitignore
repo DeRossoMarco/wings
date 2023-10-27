@@ -1,3 +1,11 @@
 # Unuesful files
 .DS_Store
 .vscode/
+
+# OpenFOAM folders to keep
+wingsOpenFoam/*
+!wingsOpenFoam/0/
+!wingsOpenFoam/system/
+!wingsOpenFoam/constant/
+!wingsOpenFoam/Allclean
+!wingsOpenFoam/Allrun
