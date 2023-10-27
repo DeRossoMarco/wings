@@ -14,9 +14,14 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 3;
+numberOfSubdomains 4;
 
-method          random;
+method          hierarchical;
+
+coeffs
+{
+    n           (2 2 1);
+}
 
 
 // ************************************************************************* //

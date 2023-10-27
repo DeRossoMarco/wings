@@ -3,9 +3,9 @@
 .vscode/
 
 # OpenFOAM folders to keep
-wingsOpenFoam/*
-!wingsOpenFoam/0/
-!wingsOpenFoam/system/
-!wingsOpenFoam/constant/
-!wingsOpenFoam/Allclean
-!wingsOpenFoam/Allrun
+wing/*
+!wing/0/
+!wing/system/
+!wing/constant/
+!wing/Allclean
+!wing/Allrun

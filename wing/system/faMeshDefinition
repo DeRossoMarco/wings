@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-polyMeshPatches   (motorBikeGroup);
+polyMeshPatches   (wings);
 
 boundary
 {
@@ -22,7 +22,6 @@ boundary
     {
         type                patch;
         // ownerPolyPatch      motorBikeGroup;
-        neighbourPolyPatch  lowerWall;
     }
 }
 
