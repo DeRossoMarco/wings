@@ -35,7 +35,12 @@ geometry
         type triSurfaceMesh;
         name wing;
     }
-
+    refinementBox
+    {
+        type searchableBox;
+        min (-2.0 -2.0 -1.0);
+        max ( 8.0  2.0  1.0);
+    }
 }
 
 
@@ -87,7 +92,7 @@ castellatedMeshControls
     (
         {
             file "wing.eMesh";
-            level 6;
+            level 7;
         }
     );
 
@@ -107,7 +112,7 @@ castellatedMeshControls
         wing
         {
             // Surface-wise min and max refinement level
-            level (5 6);
+            level (6 6);
 
             // Optional specification of patch type (default is wall). No
             // constraint types (cyclic, symmetry) etc. are allowed.

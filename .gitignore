@@ -4,6 +4,8 @@
 
 # OpenFOAM folders to keep
 wing/*
+wing/constant/extendedFeatureEdgeMesh
+wing/constant/polyMesh
 !wing/0/
 !wing/system/
 !wing/constant/
