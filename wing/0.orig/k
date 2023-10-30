@@ -34,13 +34,7 @@ boundaryField
         value           $internalField;
     }
 
-    lowerWall
-    {
-        type            kqRWallFunction;
-        value           $internalField;
-    }
-
-    motorBikeGroup
+    wings
     {
         type            kqRWallFunction;
         value           $internalField;

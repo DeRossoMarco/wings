@@ -33,13 +33,7 @@ boundaryField
         value           $internalField;
     }
 
-    lowerWall
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
-
-    motorBikeGroup
+    wings
     {
         type            noSlip;
     }

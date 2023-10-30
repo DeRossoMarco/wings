@@ -33,13 +33,7 @@ boundaryField
         value           $internalField;
     }
 
-    lowerWall
-    {
-        type            omegaWallFunction;
-        value           $internalField;
-    }
-
-    motorBikeGroup
+    wings
     {
         type            omegaWallFunction;
         value           $internalField;
