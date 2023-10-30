@@ -6,7 +6,7 @@
 wing/*
 wing/constant/extendedFeatureEdgeMesh
 wing/constant/polyMesh
-!wing/0/
+!wing/0.orig
 !wing/system/
 !wing/constant/
 !wing/Allclean
