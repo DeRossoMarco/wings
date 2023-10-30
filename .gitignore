@@ -6,6 +6,7 @@
 wing/*
 wing/constant/extendedFeatureEdgeMesh
 wing/constant/polyMesh
+wing/constant/triSurface/*.eMesh
 !wing/0.orig
 !wing/system/
 !wing/constant/
