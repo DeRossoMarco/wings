@@ -20,7 +20,7 @@ sourceCase ".";
 sourcePatches (back);
 exposedPatchName front;
 
-flipNormals false;
+flipNormals true;
 mergeFaces false;
 
 extrudeModel plane;
