@@ -8,12 +8,11 @@ cd "${0%/*}" || exit                                # Run from this directory
 ## Standard decomposeParDict name:
 # unset decompDict
 
-# copy motorbike surface from resources directory
-mkdir -p constant/triSurface
-
-runApplication surfaceFeatureExtract
+cp -r 0.orig 0
 
 runApplication blockMesh
+
+runApplication surfaceFeatureExtract
 
 runApplication $decompDict decomposePar
 
