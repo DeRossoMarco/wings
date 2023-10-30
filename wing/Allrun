@@ -4,16 +4,12 @@ cd "${0%/*}" || exit                                # Run from this directory
 #------------------------------------------------------------------------------
 
 # Alternative decomposeParDict name:
-decompDict="-decomposeParDict system/decomposeParDict.6"
+# decompDict="-decomposeParDict system/decomposeParDict.6"
 ## Standard decomposeParDict name:
 # unset decompDict
 
 # copy motorbike surface from resources directory
 mkdir -p constant/triSurface
-
-cp -f \
-    "$FOAM_TUTORIALS"/resources/geometry/motorBike.obj.gz \
-    constant/triSurface/
 
 runApplication surfaceFeatureExtract
 
@@ -30,6 +26,8 @@ then
 fi
 
 runParallel $decompDict snappyHexMesh -overwrite
+
+runParallel $decompDict extrudeMesh
 
 runParallel $decompDict topoSet
 
