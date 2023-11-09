@@ -17,13 +17,13 @@ FoamFile
 //constructFrom mesh;
 constructFrom patch;
 sourceCase ".";
-sourcePatches (back);
-exposedPatchName front;
+sourcePatches (front);
+exposedPatchName back;
 
-flipNormals true;
+flipNormals false;
 mergeFaces false;
 
-extrudeModel plane;
+extrudeModel linearNormal;
 
 nLayers 1;
 expansionRatio 1.0;

@@ -17,7 +17,7 @@ forceCoeffs1
 
     log             yes;
 
-    patches         (motorBikeGroup);
+    patches         (wings);
     rho             rhoInf;      // Indicates incompressible
     rhoInf          1;           // Required when rho = rhoInf
     liftDir         (0 0 1);

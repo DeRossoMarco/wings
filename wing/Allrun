@@ -28,6 +28,8 @@ runParallel $decompDict snappyHexMesh -overwrite
 
 runParallel $decompDict extrudeMesh
 
+runParallel $decompDict transformPoints -translate "(0 0 -1)"
+
 runParallel $decompDict topoSet
 
 #- For non-parallel running: - set the initial fields
@@ -35,8 +37,6 @@ runParallel $decompDict topoSet
 
 #- For parallel running: set the initial fields
 restore0Dir -processor
-
-runParallel $decompDict patchSummary
 
 runParallel $decompDict potentialFoam -writephi
 
