@@ -21,7 +21,6 @@ boundary
     bottom
     {
         type                patch;
-        // ownerPolyPatch      motorBikeGroup;
     }
 }
 
