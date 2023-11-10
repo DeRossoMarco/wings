@@ -23,7 +23,7 @@ cuttingPlane
         {
             type        cuttingPlane;
             point       (0 0 0.001);
-            normal      (0 1 0);
+            normal      (0 0 1);
             interpolate true;
         }
     }
