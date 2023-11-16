@@ -112,7 +112,7 @@ castellatedMeshControls
         wing
         {
             // Surface-wise min and max refinement level
-            level (7 7);
+            level (6 6);
 
             // Optional specification of patch type (default is wall). No
             // constraint types (cyclic, symmetry) etc. are allowed.
@@ -153,9 +153,9 @@ castellatedMeshControls
             mode distance;
             levels
             (
-                (0.1 7) 
-                (0.5 6)
-                (0.8 5)
+                (0.1 6) 
+                (0.5 5)
+                (0.8 4)
             );
         }
     }
@@ -235,7 +235,7 @@ addLayersControls
     }
 
     // Expansion factor for layer mesh
-    expansionRatio 1.2;
+    expansionRatio 1;
 
     // Wanted thickness of final added cell layer. If multiple layers
     // is the thickness of the layer furthest away from the wall.
