@@ -6,16 +6,6 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
-upperWall
-{
-    type slip;
-}
-
-lowerWall
-{
-    type slip;
-}
-
 frontAndBack
 {
     type slip;

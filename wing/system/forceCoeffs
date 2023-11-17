@@ -6,6 +6,11 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
+#include        "../0.orig/include/initialConditions"
+
+i               #eval "cos(degToRad($alpha))";
+j               #eval "sin(degToRad($alpha))";
+
 forceCoeffs1
 {
     type            forceCoeffs;
@@ -20,8 +25,8 @@ forceCoeffs1
     patches         (wings);
     rho             rhoInf;      // Indicates incompressible
     rhoInf          1.225;           // Required when rho = rhoInf
-    liftDir         (0 1 0);
-    dragDir         (1 0 0);
+    liftDir         (-$j $i 0);
+    dragDir         ( $i $j 0);
     CofR            (0.72 0 0);  // Axle midpoint on ground
     pitchAxis       (0 1 0);
     magUInf         8;

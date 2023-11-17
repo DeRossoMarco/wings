@@ -23,10 +23,29 @@ internalField   uniform $turbulentOmega;
 boundaryField
 {
     #includeEtc "caseDicts/setConstraintTypes"
+    
+    inlet
+    {
+        type            inletOutlet;
+        inletValue      $internalField;
+        value           $internalField;
+    }
 
-    #include "include/fixedInlet"
+    lowerWall
+    {
+        type            inletOutlet;
+        inletValue      $internalField;
+        value           $internalField;
+    }
 
     outlet
+    {
+        type            inletOutlet;
+        inletValue      $internalField;
+        value           $internalField;
+    }
+
+    upperWall
     {
         type            inletOutlet;
         inletValue      $internalField;

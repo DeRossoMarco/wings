@@ -26,12 +26,29 @@ boundaryField
 
     inlet
     {
-        type            zeroGradient;
+        type            outletInlet;
+        outletValue     $internalField;
+        value           $internalField;
+    }
+
+    lowerWall
+    {
+        type            outletInlet;
+        outletValue     $internalField;
+        value           $internalField;
     }
 
     outlet
     {
-        type            fixedValue;
+        type            outletInlet;
+        outletValue     $internalField;
+        value           $internalField;
+    }
+
+    upperWall
+    {
+        type            outletInlet;
+        outletValue     $internalField;
         value           $internalField;
     }
 

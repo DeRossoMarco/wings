@@ -20,16 +20,37 @@ dimensions      [0 1 -1 0 0 0 0];
 
 internalField   uniform $flowVelocity;
 
+boundary        uniform $flowVelocity;
+
 boundaryField
 {
     #includeEtc "caseDicts/setConstraintTypes"
 
-    #include "include/fixedInlet"
+    inlet
+    {
+        type            inletOutlet;
+        inletValue      $boundary;
+        value           $internalField;
+    }
+
+    lowerWall
+    {
+        type            inletOutlet;
+        inletValue      $boundary;
+        value           $internalField;
+    }
 
     outlet
     {
         type            inletOutlet;
-        inletValue      uniform (0 0 0);
+        inletValue      $boundary;
+        value           $internalField;
+    }
+
+    upperWall
+    {
+        type            inletOutlet;
+        inletValue      $boundary;
         value           $internalField;
     }
 

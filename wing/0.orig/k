@@ -24,10 +24,28 @@ boundaryField
 {
     #includeEtc "caseDicts/setConstraintTypes"
 
-    //- Define inlet conditions
-    #include "include/fixedInlet"
+    inlet
+    {
+        type            inletOutlet;
+        inletValue      $internalField;
+        value           $internalField;
+    }
+
+    lowerWall
+    {
+        type            inletOutlet;
+        inletValue      $internalField;
+        value           $internalField;
+    }
 
     outlet
+    {
+        type            inletOutlet;
+        inletValue      $internalField;
+        value           $internalField;
+    }
+
+    upperWall
     {
         type            inletOutlet;
         inletValue      $internalField;
