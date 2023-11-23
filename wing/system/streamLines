@@ -24,7 +24,7 @@ streamLines
     fields      (p U k);
 
     // Steps particles can travel before being removed
-    lifeTime    10000;
+    lifeTime    1000;
 
     //- Specify either absolute length of steps (trackLength) or a number
     //  of subcycling steps per cell (nSubCycle)

@@ -17,8 +17,7 @@ forceCoeffs
 
     libs            (forces);
 
-    writeControl    timeStep;
-    timeInterval    1;
+    writeControl    writeTime;
 
     log             yes;
 

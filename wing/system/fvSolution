@@ -59,6 +59,12 @@ solvers
         nSweeps         1;
     }
 
+    kFinal
+    {
+        $k;
+        relTol 0;
+    }
+
     omega
     {
         solver          smoothSolver;
@@ -66,6 +72,12 @@ solvers
         tolerance       1e-8;
         relTol          0.1;
         nSweeps         1;
+    }
+    
+    omegaFinal
+    {
+        $omega;
+        relTol 0;
     }
 }
 

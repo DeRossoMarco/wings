@@ -6,7 +6,7 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
-velocity            16;
+velocity            8;
 alpha               0;
 u                   #eval "$velocity*cos(degToRad($alpha))";
 v                   #eval "$velocity*sin(degToRad($alpha))";

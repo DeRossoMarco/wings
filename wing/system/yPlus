@@ -13,6 +13,5 @@ yPlus
 
     region          region0;
     enabled         true;
-    writeControl    timeStep;
-    writeInterval   100;
+    writeControl    writeTime;
 }
