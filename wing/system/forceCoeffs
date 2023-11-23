@@ -11,7 +11,7 @@
 i               #eval "cos(degToRad($alpha))";
 j               #eval "sin(degToRad($alpha))";
 
-forceCoeffs1
+forceCoeffs
 {
     type            forceCoeffs;
 
@@ -32,28 +32,7 @@ forceCoeffs1
     magUInf         8;
     lRef            1;
     Aref            1;
+    //writeInterval   100;
 }
-
-/*
-binField1
-{
-    type                    binField;
-    libs                    (fieldFunctionObjects);
-    binModel                singleDirectionUniformBin;
-    fields                  (forceCoeff);
-    patches                 (motorBikeGroup);
-    decomposePatchValues    true;
-    CofR                    ${../forceCoeffs1/CofR};
-
-    binData
-    {
-        nBin        20;          // output data into 20 bins
-        direction   (1 0 0);     // bin direction
-        cumulative  yes;
-    }
-    writeControl            timeStep;
-}
-*/
-
 
 // ************************************************************************* //

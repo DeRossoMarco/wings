@@ -6,11 +6,11 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
-velocity            8;
-alpha               15;
-U                   #eval "$velocity*cos(degToRad($alpha))";
-V                   #eval "$velocity*sin(degToRad($alpha))";
-flowVelocity        ($U $V 0);
+velocity            16;
+alpha               0;
+u                   #eval "$velocity*cos(degToRad($alpha))";
+v                   #eval "$velocity*sin(degToRad($alpha))";
+flowVelocity        ($u $v 0);
 pressure            0;
 turbulentKE         0.24;
 turbulentOmega      1.78;

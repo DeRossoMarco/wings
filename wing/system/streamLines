@@ -47,7 +47,7 @@ streamLines
         // Note: tracks slightly offset so as not to be on a face
         start       (-1.001 -0.5 0.001);
         end         (-1.001  0.5 0.001);
-        nPoints     40;
+        nPoints     50;
     }
 }
 
