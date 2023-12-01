@@ -54,7 +54,7 @@ boundaryField
 
     wings
     {
-        type            omegaWallFunction;
+        type            fixedValue;
         value           $internalField;
     }
 

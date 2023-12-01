@@ -54,7 +54,7 @@ boundaryField
 
     wings
     {
-        type            kqRWallFunction;
+        type            fixedValue;
         value           $internalField;
     }
 

@@ -54,7 +54,7 @@ boundaryField
 
     wings
     {
-        type            nutkWallFunction;
+        type            fixedValue;
         value           uniform 0;
     }
 }
