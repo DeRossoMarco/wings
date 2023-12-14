@@ -21,7 +21,7 @@ streamLines
     direction   forward;
 
     // Fields to sample
-    fields      (p U k);
+    fields      (p U);
 
     // Steps particles can travel before being removed
     lifeTime    1000;

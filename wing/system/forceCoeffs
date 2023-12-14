@@ -17,9 +17,13 @@ forceCoeffs
 
     libs            (forces);
 
-    writeControl    writeTime;
+    //writeControl    writeTime;
 
-    log             yes;
+    writeControl      timeStep;
+
+    writeInterval     10;
+
+    log             no;
 
     patches         (wings);
     rho             rhoInf;      // Indicates incompressible

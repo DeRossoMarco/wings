@@ -44,12 +44,12 @@ runParallel $decompDict potentialFoam -writephi
 
 runParallel $decompDict checkMesh -writeFields '(nonOrthoAngle)' -constant
 
-runParallel $decomposeDict renumberMesh -overwrite
+# runParallel $decomposeDict renumberMesh -overwrite
 
 runParallel $decompDict $(getApplication)
 
 runApplication reconstructParMesh -constant
 
-runApplication reconstructPar -latestTime
+runApplication reconstructPar
 
 #------------------------------------------------------------------------------

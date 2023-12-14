@@ -41,7 +41,7 @@ wallBoundedStreamLines
     libs    (fieldFunctionObjects);
 
     U           UNear;           // Velocity field for tracking
-    fields      (p U k UNear);   // Fields to sample
+    fields      (p U UNear);   // Fields to sample
     setFormat   vtk;
     direction   forward;
     lifeTime    100;    // Steps particles can travel before being removed

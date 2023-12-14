@@ -112,7 +112,7 @@ castellatedMeshControls
         wing
         {
             // Surface-wise min and max refinement level
-            level (8 8);
+            level (9 9);
 
             // Optional specification of patch type (default is wall). No
             // constraint types (cyclic, symmetry) etc. are allowed.
@@ -146,17 +146,17 @@ castellatedMeshControls
         refinementBox
         {
             mode inside;
-            levels ((1E15 3));
+            levels ((1E15 4));
         }
         wing
         {
             mode distance;
             levels
             (
-                (0.1 7) 
-                (0.5 6)
-                (0.8 5)
-                (1.0 4)
+                (0.3 8) 
+                (0.6 7)
+                (0.9 6)
+                (1.2 5)
             );
         }
     }
