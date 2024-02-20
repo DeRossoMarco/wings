@@ -11,4 +11,6 @@ module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
 module load openfoam
 
 # #!/bin/bash
-localDir='/global-scratch/USER/CASE'
+localDir='/global-scratch/mderosso/wings'
+
+wing/Allrun
