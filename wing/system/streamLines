@@ -24,7 +24,7 @@ streamLines
     fields      (p U);
 
     // Steps particles can travel before being removed
-    lifeTime    1000;
+    lifeTime    5000;
 
     //- Specify either absolute length of steps (trackLength) or a number
     //  of subcycling steps per cell (nSubCycle)
@@ -45,8 +45,8 @@ streamLines
         axis        x;  //distance;
 
         // Note: tracks slightly offset so as not to be on a face
-        start       (-1.001 -0.5 0.001);
-        end         (-1.001  0.5 0.001);
+        start       (-1.0 -0.2 0.001);
+        end         (-1.0  0.2 0.001);
         nPoints     50;
     }
 }

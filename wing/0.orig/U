@@ -28,9 +28,10 @@ boundaryField
 
     inlet
     {
-        type            inletOutlet;
-        inletValue      $boundary;
-        value           $internalField;
+        //type            inletOutlet;
+        //inletValue      $boundary;
+        type              fixedValue;
+        value             $internalField;
     }
 
     lowerWall

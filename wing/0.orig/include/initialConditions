@@ -8,8 +8,8 @@
 
 velocity            8;
 alpha               0;
-u                   #eval "$velocity*cos(degToRad($alpha))";
-v                   #eval "$velocity*sin(degToRad($alpha))";
+u                   #calc "$velocity*cos(degToRad($alpha))";
+v                   #calc "$velocity*sin(degToRad($alpha))";
 flowVelocity        ($u $v 0);
 pressure            0;
 turbulentKE         0.24;

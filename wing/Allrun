@@ -12,6 +12,8 @@ cp -r 0.orig 0
 
 touch wings.foam
 
+cp -rf system/simple/ system
+
 runApplication blockMesh
 
 runApplication surfaceFeatureExtract
@@ -34,17 +36,21 @@ runParallel $decompDict transformPoints -translate "(0 0 -1)"
 
 runParallel $decompDict topoSet
 
+runParallel $decompDict checkMesh -writeFields '(nonOrthoAngle)' -constant
+
 #- For non-parallel running: - set the initial fields
 # restore0Dir
 
 #- For parallel running: set the initial fields
 restore0Dir -processor
 
-runParallel $decompDict potentialFoam -writephi
+runParallel $decompDict potentialFoam -writephi -writePhi
 
-runParallel $decompDict checkMesh -writeFields '(nonOrthoAngle)' -constant
+runParallel $decompDict $(getApplication)
 
 # runParallel $decomposeDict renumberMesh -overwrite
+
+cp -rf system/pimple/ system
 
 runParallel $decompDict $(getApplication)
 
