@@ -92,7 +92,7 @@ castellatedMeshControls
     (
         {
             file "wing.eMesh";
-            level 7;
+            level 10;
         }
     );
 
@@ -112,7 +112,7 @@ castellatedMeshControls
         wing
         {
             // Surface-wise min and max refinement level
-            level (9 9);
+            level (10 10);
 
             // Optional specification of patch type (default is wall). No
             // constraint types (cyclic, symmetry) etc. are allowed.
@@ -146,17 +146,17 @@ castellatedMeshControls
         refinementBox
         {
             mode inside;
-            levels ((1E15 4));
+            levels ((1E15 5));
         }
         wing
         {
             mode distance;
             levels
             (
-                (0.3 8) 
+                (0.2 9) 
+                (0.4 8)
                 (0.6 7)
-                (0.9 6)
-                (1.2 5)
+                (0.8 6)
             );
         }
     }
@@ -236,7 +236,7 @@ addLayersControls
     }
 
     // Expansion factor for layer mesh
-    expansionRatio 1;
+    expansionRatio 1.2;
 
     // Wanted thickness of final added cell layer. If multiple layers
     // is the thickness of the layer furthest away from the wall.

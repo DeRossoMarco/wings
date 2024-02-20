@@ -24,7 +24,7 @@ stopAt          endTime;
 
 endTime         1;
 
-deltaT          0.01;
+deltaT          0.001;
 
 //adjustTimeStep  yes;
 
@@ -32,7 +32,7 @@ deltaT          0.01;
 
 writeControl    timeStep;
 
-writeInterval   100;
+writeInterval   1000;
 
 purgeWrite      0;
 

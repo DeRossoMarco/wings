@@ -6,8 +6,8 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
-velocity            8;
-alpha               0;
+velocity            10;
+alpha               15;
 u                   #calc "$velocity*cos(degToRad($alpha))";
 v                   #calc "$velocity*sin(degToRad($alpha))";
 flowVelocity        ($u $v 0);
