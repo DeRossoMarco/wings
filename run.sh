@@ -2,6 +2,8 @@
 #$ -cwd                 # workingDirectory
 #$ -j y
 #$ -N wings
+#$ -M marco.derosso@mail.polimi.it
+#$ -m e
 #$ -S /bin/bash
 #$ -q all.q             # queueName
 #$ -pe mpi 16           # cpuNumber
