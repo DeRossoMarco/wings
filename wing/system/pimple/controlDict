@@ -53,6 +53,7 @@ functions
     #include "cuttingPlane"
     #include "forceCoeffs"
     #include "yPlus"
+    #include "profiling"
 }
 
 

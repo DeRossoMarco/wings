@@ -33,8 +33,15 @@ geometry
     wing.stl //must be in ../constant/triSurface/wing.stl
     {
         type triSurfaceMesh;
-        name wing;
+        name wing1;
     }
+
+    wing_rotated.stl //must be in ../constant/triSurface/wing.stl
+    {
+        type triSurfaceMesh;
+        name wing2;
+    }
+
     refinementBox
     {
         type searchableBox;
@@ -92,7 +99,11 @@ castellatedMeshControls
     (
         {
             file "wing.eMesh";
-            level 10;
+            level 7;
+        }
+        {
+            file "wing_rotated.eMesh";
+            level 7;
         }
     );
 
@@ -109,10 +120,23 @@ castellatedMeshControls
 
     refinementSurfaces
     {
-        wing
+        wing1
         {
             // Surface-wise min and max refinement level
-            level (10 10);
+            level (9 9);
+
+            // Optional specification of patch type (default is wall). No
+            // constraint types (cyclic, symmetry) etc. are allowed.
+            patchInfo
+            {
+                type wall;
+                inGroups (wings);
+            }
+        }
+        wing2
+        {
+            // Surface-wise min and max refinement level
+            level (9 9);
 
             // Optional specification of patch type (default is wall). No
             // constraint types (cyclic, symmetry) etc. are allowed.
@@ -146,17 +170,17 @@ castellatedMeshControls
         refinementBox
         {
             mode inside;
-            levels ((1E15 5));
+            levels ((1E15 4));
         }
-        wing
+        wings
         {
             mode distance;
             levels
             (
-                (0.2 9) 
-                (0.4 8)
+                (0.3 8) 
                 (0.6 7)
-                (0.8 6)
+                (0.9 6)
+                (1.2 5)
             );
         }
     }

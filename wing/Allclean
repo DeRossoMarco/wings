@@ -9,4 +9,9 @@ cleanCase0
 rm -f constant/triSurface/*.eMesh
 rm -rf constant/extendedFeatureEdgeMesh
 
+# Remove specific control dictionary
+rm -f system/controlDict
+rm -f system/fvSchemes
+rm -f system/fvSolution
+
 #------------------------------------------------------------------------------

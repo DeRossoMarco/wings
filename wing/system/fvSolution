@@ -81,7 +81,7 @@ solvers
     }
 }
 
-PIMPLE
+SIMPLE
 {
     nNonOrthogonalCorrectors 0;
     nCorrectors 2;
