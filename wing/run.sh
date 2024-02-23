@@ -13,7 +13,7 @@ module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
 module load openfoam
 
 # #!/bin/bash
-localDir='/global-scratch/mderosso/wings'
+localDir='/global-scratch/mderosso/wing'
 
 decompDict="-decomposeParDict system/decomposeParDict.32"
 
