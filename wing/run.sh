@@ -17,6 +17,8 @@ localDir='/global-scratch/mderosso/wing'
 
 decompDict="-decomposeParDict system/decomposeParDict.32"
 
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
 cp -r 0.orig 0
 
 touch wings.foam
