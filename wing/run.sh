@@ -23,7 +23,7 @@ cp -r 0.orig 0
 
 touch wings.foam
 
-cp -rf system/simple/ system
+cp -rf system/simple/* system/
 
 runApplication blockMesh
 
@@ -61,7 +61,7 @@ runParallel $decompDict $(getApplication)
 
 # runParallel $decomposeDict renumberMesh -overwrite
 
-cp -rf system/pimple/ system
+cp -rf system/pimple/* system/
 
 runParallel $decompDict $(getApplication)
 
