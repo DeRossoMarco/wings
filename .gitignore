@@ -12,3 +12,4 @@ wing/constant/triSurface/*.eMesh
 !wing/constant/
 !wing/Allrun
 !wing/Allclean
+!wing/run.sh
