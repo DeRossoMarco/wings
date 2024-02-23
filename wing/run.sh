@@ -1,9 +1,9 @@
 #!/bin.bash
 #$ -cwd                 # workingDirectory
 #$ -j y
-#$ -N wings
-#$ -M marco.derosso@mail.polimi.it
 #$ -m e
+#$ -M marco.derosso@mail.polimi.it
+#$ -N wings
 #$ -S /bin/bash
 #$ -q all.q             # queueName
 #$ -pe mpi 32           # cpuNumber
