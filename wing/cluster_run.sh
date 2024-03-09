@@ -1,5 +1,4 @@
 #!/bin.bash
-#$ -cwd                 # workingDirectory
 #$ -j y
 #$ -N wings
 #$ -S /bin/bash
@@ -11,7 +10,6 @@ module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
 module load openfoam
 
 # #!/bin/bash
-localDir='/global-scratch/mderosso/wings/wing'
 
 decompDict="-decomposeParDict system/decomposeParDict.16"
 
