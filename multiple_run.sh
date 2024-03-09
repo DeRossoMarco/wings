@@ -4,7 +4,8 @@ output_file="cdcl.txt"
 if [ -e "$output_file" ]; then    rm "$output_file"
 fi
 cd wing
-cp system/blockMeshDict.orig system/blockMeshDictcp 0.orig/include/initialConditions.orig 0.orig/include/initialConditions
+cp system/blockMeshDict.orig system/blockMeshDict
+cp 0.orig/include/initialConditions.orig 0.orig/include/initialConditions
 Nx=25
 Ny=25
 sed -i "s/Nx/$Nx/; s/Ny/$Ny/" system/blockMeshDict
