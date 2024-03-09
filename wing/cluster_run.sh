@@ -1,8 +1,6 @@
 #!/bin.bash
 #$ -cwd                 # workingDirectory
 #$ -j y
-#$ -m e
-#$ -M marco.derosso@mail.polimi.it
 #$ -N wings
 #$ -S /bin/bash
 #$ -q all.q             # queueName
