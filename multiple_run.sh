@@ -12,7 +12,7 @@ sed -i "s/Nx/$Nx/; s/Ny/$Ny/" system/blockMeshDict
 for angle in {-20..20..5}; do
     echo "Running Allrun with angle=$angle"
     sed -i "s/angle/$angle/" 0.orig/include/initialConditions
-    ./Allrun
+    ./cluster_run.sh
     cp PostProcessing -r ../PostProcessing_${angle}
     cp 0.orig/include/initialConditions.orig 0.orig/include/initialConditions
     ./Allclean    
