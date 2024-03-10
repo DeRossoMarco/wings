@@ -1,7 +1,11 @@
 #!/bin/bash
+#$ -cwd
+
 file="coefficients.dat"
 output_file="cdcl.txt"
-if [ -e "$output_file" ]; then    rm "$output_file"
+if [ -e "$output_file" ]
+then
+    rm "$output_file"
 fi
 cd wing
 cp system/blockMeshDict.orig system/blockMeshDict
