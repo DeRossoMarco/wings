@@ -1,5 +1,14 @@
 #!/bin/bash
 #$ -cwd
+#$ -j y
+#$ -N wings
+#$ -S /bin/bash
+#$ -q all.q             # queueName
+#$ -pe mpi 16           # cpuNumber
+#$ -l h_rt=20:00:00
+
+module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
+module load openfoam
 
 file="coefficients.dat"
 output_file="cdcl.txt"
