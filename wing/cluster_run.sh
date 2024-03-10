@@ -1,4 +1,5 @@
-# #!/bin/bash
+#!/bin/bash
+cd "${0%/*}" || exit
 
 decompDict="-decomposeParDict system/decomposeParDict.16"
 
