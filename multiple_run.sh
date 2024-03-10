@@ -23,14 +23,14 @@ Nx=25
 Ny=25
 sed -i "s/Nx/$Nx/; s/Ny/$Ny/" system/blockMeshDict
 for angle in {-20..20..5}; do
-    echo "Running Allrun with angle=$angle"
+    echo "Running simulation with angle=$angle"
     sed -i "s/angle/$angle/" 0.orig/include/initialConditions
     ./cluster_run.sh
-    cp PostProcessing -r ../PostProcessing_${angle}
+    cp -r postProcessing ../postProcessing_${angle}
     cp 0.orig/include/initialConditions.orig 0.orig/include/initialConditions
     ./Allclean    
     cd ..
-    cd PostProcessing_${angle}/forceCoeff
+    cd postProcessing_${angle}/forceCoeffs
     total_lines=$(wc -l < "$file")
     lines_to_process=100
     start_line=$((total_lines - lines_to_process + 1))
