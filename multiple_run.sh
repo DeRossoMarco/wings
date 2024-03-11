@@ -39,7 +39,8 @@ for angle in {-20..20..5}; do
     max_cd=$(echo "$data" | awk '{print $1}' | sort -n | tail -n 1)
     min_cl=$(echo "$data" | awk '{print $2}' | sort -n | head -n 1)
     max_cl=$(echo "$data" | awk '{print $2}' | sort -n | tail -n 1)
-    mean_cd=$(awk "BEGIN {print ($min_cd + $max_cd) / 2}")    mean_cl=$(awk "BEGIN {print ($min_cl + $max_cl) / 2}")
+    mean_cd=$(awk "BEGIN {print ($min_cd + $max_cd) / 2}")
+    mean_cl=$(awk "BEGIN {print ($min_cl + $max_cl) / 2}")
     cd ../..
 
     echo "$angle $mean_cd $mean_cl" >> "$output_file"
