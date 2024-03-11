@@ -10,7 +10,7 @@
 module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
 module load openfoam
 
-file="coefficients.dat"
+file="1/coefficient.dat"
 output_file="cdcl.txt"
 if [ -e "$output_file" ]
 then
@@ -35,13 +35,13 @@ for angle in {-20..20..5}; do
     lines_to_process=100
     start_line=$((total_lines - lines_to_process + 1))
     data=$(tail -n "$lines_to_process" "$file" | awk '{print $2, $5}')
-    min_col2=$(echo "$data" | awk '{print $1}' | sort -n | head -n 1)
-    max_col2=$(echo "$data" | awk '{print $1}' | sort -n | tail -n 1)
-    min_col5=$(echo "$data" | awk '{print $2}' | sort -n | head -n 1)
-    max_col5=$(echo "$data" | awk '{print $2}' | sort -n | tail -n 1)
-    mean_col2=$(awk "BEGIN {print ($min_col1 + $max_col1) / 2}")    mean_col5=$(awk "BEGIN {print ($min_col4 + $max_col4) / 2}")
+    min_cd=$(echo "$data" | awk '{print $1}' | sort -n | head -n 1)
+    max_cd=$(echo "$data" | awk '{print $1}' | sort -n | tail -n 1)
+    min_cl=$(echo "$data" | awk '{print $2}' | sort -n | head -n 1)
+    max_cl=$(echo "$data" | awk '{print $2}' | sort -n | tail -n 1)
+    mean_cd=$(awk "BEGIN {print ($min_cd + $max_cd) / 2}")    mean_cl=$(awk "BEGIN {print ($min_cl + $max_cl) / 2}")
     cd ../..
 
-    echo "$angle $mean_col2 $mean_col5" >> "$output_file"
+    echo "$angle $mean_cd $mean_cl" >> "$output_file"
     cd wing    
 done
