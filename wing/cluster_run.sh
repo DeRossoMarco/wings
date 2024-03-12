@@ -11,7 +11,7 @@ module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
 module load openfoam
 
 #!/bin/bash
-cd "${0%/*}" || exit
+localDir='/global-scratch/mderosso/wing'
 
 decompDict="-decomposeParDict system/decomposeParDict"
 
