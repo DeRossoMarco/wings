@@ -12,6 +12,8 @@ module load openfoam
 
 cd wing
 
+OLDIFS=$IFS
+IFS=','
 for tuple in 25,16 20,12 15,9 10,6; do
     set -- $tuple
     echo "Running simulation with (Nx, Ny)=($1, $2)"
@@ -21,3 +23,4 @@ for tuple in 25,16 20,12 15,9 10,6; do
     cp -r postProcessing ../postProcessing_${1}_${2}
     ./Allclean
 done
+IFS=$OLDIFS

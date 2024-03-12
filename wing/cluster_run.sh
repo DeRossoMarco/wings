@@ -13,7 +13,7 @@ module load openfoam
 #!/bin/bash
 localDir='/global-scratch/mderosso/wing'
 
-decompDict="-decomposeParDict system/decomposeParDict"
+decompDict="-decomposeParDict system/decomposeParDict.16"
 
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
