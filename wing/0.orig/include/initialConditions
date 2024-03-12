@@ -7,7 +7,7 @@
 \*---------------------------------------------------------------------------*/
 
 velocity            8;
-alpha               -5;
+alpha               0;
 u                   #calc "$velocity*cos(degToRad($alpha))";
 v                   #calc "$velocity*sin(degToRad($alpha))";
 flowVelocity        ($u $v 0);

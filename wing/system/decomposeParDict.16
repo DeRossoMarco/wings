@@ -20,7 +20,7 @@ method          hierarchical;
 
 coeffs
 {
-    n           (4 2 2);
+    n           (4 4 1);
 }
 
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -cwd
 #$ -j y
-#$ -N wings
+#$ -N multiple_angle
 #$ -S /bin/bash
 #$ -q all.q             # queueName
 #$ -pe mpi 16           # cpuNumber
@@ -20,7 +20,7 @@ cd wing
 cp system/blockMeshDict.orig system/blockMeshDict
 cp 0.orig/include/initialConditions.orig 0.orig/include/initialConditions
 Nx=25
-Ny=25
+Ny=16
 sed -i "s/Nx/$Nx/; s/Ny/$Ny/" system/blockMeshDict
 for angle in {-20..20..5}; do
     echo "Running simulation with angle=$angle"
