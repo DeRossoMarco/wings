@@ -4,7 +4,7 @@
 #$ -N wings
 #$ -S /bin/bash
 #$ -q all.q             # queueName
-#$ -pe mpi 4           # cpuNumber
+#$ -pe mpi 8           # cpuNumber
 #$ -l h_rt=10:00:00
 
 module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
