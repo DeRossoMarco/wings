@@ -14,7 +14,7 @@ cd wing
 
 OLDIFS=$IFS
 IFS=','
-for tuple in 25,16 20,12 15,9 10,6; do
+for tuple in 30,20 35,24; do #25,16 20,12 15,9 10,6; do
     set -- $tuple
     echo "Running simulation with (Nx, Ny)=($1, $2)"
     cp system/blockMeshDict.orig system/blockMeshDict
