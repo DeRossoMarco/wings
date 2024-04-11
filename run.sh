@@ -81,7 +81,7 @@ if [[ $FLAG_ANGLE ]]; then
     cp wing/system/decomposeParDict.orig wing/system/decomposeParDict
     sed -i "s/CORES/$CORES/" wing/system/decomposeParDict
     sed -i "s/CORES/$CORES/" multiple_angles.sh
-    qsub multiple_angle.sh
+    qsub multiple_angles.sh
 
 elif [[ $FLAG_MESH ]]; then
     echo "*** RUNNING MESH INDEPENDENCE SIMULATION ***"
