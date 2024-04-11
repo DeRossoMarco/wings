@@ -1,11 +1,11 @@
 #!/bin/bash
 #$ -cwd
 #$ -j y
-#$ -N wings
+#$ -N run_CORES_cores
 #$ -S /bin/bash
 #$ -q all.q             # queueName
-#$ -pe mpi 16           # cpuNumber
-#$ -l h_rt=10:00:00
+#$ -pe mpi CORES        # cpuNumber
+#$ -l h_rt=20:00:00
 
 module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
 module load openfoam
@@ -13,7 +13,7 @@ module load openfoam
 #!/bin/bash
 localDir='/global-scratch/mderosso/wing'
 
-decompDict="-decomposeParDict system/decomposeParDict.16"
+decompDict="-decomposeParDict system/decomposeParDict"
 
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 

@@ -5,14 +5,12 @@
 |   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-
-velocity            8;
-alpha               0;
+velocity            SPEED;
+alpha               ANGLE;
 u                   #calc "$velocity*cos(degToRad($alpha))";
 v                   #calc "$velocity*sin(degToRad($alpha))";
 flowVelocity        ($u $v 0);
 pressure            0;
 turbulentKE         0.24;
 turbulentOmega      1.78;
-
-// ************************************************************************* //
+// ********************************************************************* //

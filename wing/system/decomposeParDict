@@ -14,13 +14,13 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 16;
+numberOfSubdomains CORES;
 
-method          hierarchical;
+method          scotch;
 
-coeffs
+scotchCoeffs
 {
-    n           (4 4 1);
+    strategy "m{asc=b{width=3,bnd=d{pass=40,dif=1,rem=0}[...],type=h}";
 }
 
 
