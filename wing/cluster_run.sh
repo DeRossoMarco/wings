@@ -1,11 +1,6 @@
 #!/bin/bash
-#$ -cwd
-#$ -j y
-#$ -N run_CORES_cores
-#$ -S /bin/bash
-#$ -q all.q             # queueName
-#$ -pe mpi CORES        # cpuNumber
-#$ -l h_rt=20:00:00
+#$ -N single_run
+#$ -l h_rt=10:00:00
 
 module use /software/spack/spack/share/spack/modules/linux-rocky8-sandybridge/
 module load openfoam

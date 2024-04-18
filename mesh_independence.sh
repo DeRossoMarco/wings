@@ -1,10 +1,5 @@
 #!/bin/bash
-#$ -cwd
-#$ -j y
 #$ -N mesh_independence
-#$ -S /bin/bash
-#$ -q all.q             # queueName
-#$ -pe mpi CORES        # cpuNumber
 #$ -l h_rt=20:00:00
 
 cd wing
