@@ -18,10 +18,4 @@ numberOfSubdomains CORES;
 
 method          scotch;
 
-scotchCoeffs
-{
-    strategy "m{asc=b{width=3,bnd=d{pass=40,dif=1,rem=0}[...],type=h}";
-}
-
-
 // ************************************************************************* //
