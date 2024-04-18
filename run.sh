@@ -6,6 +6,9 @@ SPEED=7.5
 ANGLE=0
 NX=25
 NY=16
+MAX_PROCESSES=32
+MAX_ANGLE=20
+ANGLE_STEP=5
 
 # Variables
 FLAG_ANGLE=false
@@ -17,11 +20,11 @@ OPTIONS="-cwd -j y -S /bin/bash -q all.q"
 
 help()
 {
-    echo "Usage: run [-a] [-m] [-p] [--cores number_of_cores] [--speed speed_of_flow] [--angle angle_of_flow]"
+    echo "Usage: run [-a] [-m] [-p [max_number_of_processes]] [--cores number_of_cores] [--speed speed_of_flow] [--angle angle_of_flow]"
     exit 0
 }
 
-SHORT=amph
+SHORT=a::mp::h
 LONG=cores:,speed:,angle:,help
 VALID_ARGS=$(getopt -o $SHORT --long $LONG -- "$@")
 if [[ $? -ne 0 ]]; then
@@ -34,7 +37,15 @@ while [ : ]; do
     case "$1" in
         -a)
             FLAG_ANGLE=true
-            shift
+            case "$2" in
+                "")
+                    shift 2
+                    ;;
+                *)
+                    MAX_ANGLE=$2
+                    shift 2
+                    ;;
+            esac
             ;;
         -m)
             FLAG_MESH=true
@@ -42,7 +53,15 @@ while [ : ]; do
             ;;
         -p)
             FLAG_PROCESSES=true
-            shift
+            case "$2" in
+                "")
+                    shift 2
+                    ;;
+                *)
+                    MAX_PROCESSES=$2
+                    shift 2
+                    ;;
+            esac
             ;;
         --cores)
             CORES=$2
@@ -96,7 +115,6 @@ elif $FLAG_MESH; then
 
 elif $FLAG_PROCESSES; then
     echo "*** RUNNING MULTIPLE PROCESSES SIMULATION ***"
-    MAX_PROCESSES=32
     cp wing/0.orig/include/initialConditions.orig wing/0.orig/include/initialConditions
     sed -i "s/ANGLE/$ANGLE/" wing/0.orig/include/initialConditions
     sed -i "s/SPEED/$SPEED/" wing/0.orig/include/initialConditions

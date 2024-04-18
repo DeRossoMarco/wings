@@ -12,7 +12,7 @@ fi
 
 cd wing
 
-for ANGLE in {-20..20..5}; do
+for (( ANGLE=-$MAX_ANGLE; ANGLE<=$MAX_ANGLE; ANGLE+=$ANGLE_STEP )); do
     echo "Running simulation with angle=$ANGLE"
 
     # Run
