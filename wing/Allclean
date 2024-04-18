@@ -14,4 +14,9 @@ rm -f system/controlDict
 rm -f system/fvSchemes
 rm -f system/fvSolution
 
+# Remove added dictionaries
+rm -f system/blockMeshDict
+rm -f system/decomposeParDict
+rm -f 0.orig/include/initialConditions
+
 #------------------------------------------------------------------------------
