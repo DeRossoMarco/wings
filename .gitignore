@@ -7,6 +7,12 @@ wing/*
 wing/constant/extendedFeatureEdgeMesh
 wing/constant/polyMesh
 wing/constant/triSurface/*.eMesh
+wing/0.orig/include/initialConditions
+wing/system/blockMeshDict
+wing/system/controlDict
+wing/system/decomposeParDict
+wing/system/fvSchemes
+wing/system/fvSolution
 !wing/0.orig
 !wing/system
 !wing/constant
