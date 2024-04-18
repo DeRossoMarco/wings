@@ -172,7 +172,7 @@ castellatedMeshControls
             mode inside;
             levels ((1E15 4));
         }
-        wings
+        wing1
         {
             mode distance;
             levels
