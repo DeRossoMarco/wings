@@ -2,7 +2,7 @@
 .DS_Store
 .vscode/
 
-# OpenFOAM folders to keep
+# OpenFOAM folders exclusion
 wing/*
 wing/constant/extendedFeatureEdgeMesh
 wing/constant/polyMesh
@@ -13,6 +13,8 @@ wing/system/controlDict
 wing/system/decomposeParDict
 wing/system/fvSchemes
 wing/system/fvSolution
+
+# OpenFOAM folders to keep
 !wing/0.orig
 !wing/system
 !wing/constant
