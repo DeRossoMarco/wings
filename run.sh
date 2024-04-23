@@ -102,7 +102,9 @@ if $FLAG_ANGLE; then
     sed -i "s/NX/$NX/; s/NY/$NY/" wing/system/blockMeshDict
     cp wing/system/decomposeParDict.orig wing/system/decomposeParDict
     sed -i "s/CORES/$CORES/" wing/system/decomposeParDict
-    qsub $OPTIONS -pe mpi $CORES multiple_angles.sh
+    sed -i "s/nProc/$CORES/" wing/cluster_run.sh
+    cd wing
+    qsub $OPTIONS -pe mpi $CORES multiple_angles.sh $CORES $MAX_ANGLE $ANGLE_STEP $SPEED
 
 elif $FLAG_MESH; then
     echo "*** RUNNING MESH INDEPENDENCE SIMULATION ***"
@@ -111,7 +113,9 @@ elif $FLAG_MESH; then
     sed -i "s/SPEED/$SPEED/" wing/0.orig/include/initialConditions
     cp wing/system/decomposeParDict.orig wing/system/decomposeParDict
     sed -i "s/CORES/$CORES/" wing/system/decomposeParDict
-    qsub $OPTIONS -pe mpi $CORES mesh_independence.sh
+    sed -i "s/nProc/$CORES/" wing/cluster_run.sh
+    cd wing
+    qsub $OPTIONS -pe mpi $CORES mesh_independence.sh $CORES
 
 elif $FLAG_PROCESSES; then
     echo "*** RUNNING MULTIPLE PROCESSES SIMULATION ***"
@@ -120,7 +124,8 @@ elif $FLAG_PROCESSES; then
     sed -i "s/SPEED/$SPEED/" wing/0.orig/include/initialConditions
     cp wing/system/blockMeshDict.orig wing/system/blockMeshDict
     sed -i "s/NX/$NX/; s/NY/$NY/" wing/system/blockMeshDict
-    qsub $OPTIONS -pe mpi $MAX_PROCESSES multiple_processes.sh
+    cd wing
+    qsub $OPTIONS -pe mpi $MAX_PROCESSES multiple_processes.sh $MAX_PROCESSES
 
 else
     echo "*** RUNNING SINGLE SIMULATION ***"
@@ -128,10 +133,9 @@ else
     sed -i "s/NX/$NX/; s/NY/$NY/" wing/system/blockMeshDict
     cp wing/system/decomposeParDict.orig wing/system/decomposeParDict
     sed -i "s/CORES/$CORES/" wing/system/decomposeParDict
-    sed -i "s/CORES/$CORES/" wing/cluster_run.sh
     cp wing/0.orig/include/initialConditions.orig wing/0.orig/include/initialConditions
     sed -i "s/ANGLE/$ANGLE/" wing/0.orig/include/initialConditions
     sed -i "s/SPEED/$SPEED/" wing/0.orig/include/initialConditions
     cd wing
-    qsub $OPTIONS -pe mpi $CORES cluster_run.sh
+    qsub $OPTIONS -pe mpi $CORES cluster_run.sh $CORES
 fi
