@@ -20,4 +20,4 @@ wing/system/fvSolution
 !wing/constant
 !wing/Allrun
 !wing/Allclean
-!wing/cluster_run.sh
+!wing/*.sh
