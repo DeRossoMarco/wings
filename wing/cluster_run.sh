@@ -9,7 +9,7 @@ module load openfoam
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
 #!/bin/bash
-localDir="/home/meccanica/mderosso/wings/wing"
+localDir=$(pwd)
 
 cp -r 0.orig 0
 touch wings.foam
