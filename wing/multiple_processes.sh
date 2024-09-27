@@ -4,10 +4,10 @@
 
 MAX_PROCESSES=$1
 
-mkdir ../../multiple_cores
+mkdir -p ../../multiple_cores
 
 for (( CORES=1; CORES<=$MAX_PROCESSES; CORES*=2 )) do
-        echo "##### Running simulation with $CORES cores #####"
+        echo "##### Running simulation with $CORES cores #####"
         cp wing/system/decomposeParDict.orig wing/system/decomposeParDict
         sed -i "s/CORES/$CORES/" wing/system/decomposeParDict
         cd wing
