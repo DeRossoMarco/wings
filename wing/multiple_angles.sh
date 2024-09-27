@@ -43,7 +43,7 @@ for (( ANGLE=-$MAX_ANGLE; ANGLE<=$MAX_ANGLE; ANGLE+=$ANGLE_STEP )); do
     mean_cd=$(awk "BEGIN {print ($min_cd + $max_cd) / 2}")
     mean_cl=$(awk "BEGIN {print ($min_cl + $max_cl) / 2}")
     cd ../..
-    echo "$ANGLE $mean_cl $mean_cd" >> "$output_file"
+    echo "$ANGLE $mean_cd $mean_cl" >> "$output_file"
     cd ../wings/wing
 done
 
