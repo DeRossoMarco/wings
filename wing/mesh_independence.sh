@@ -13,7 +13,7 @@ for tuple in 30,20 35,24 25,16 20,12 15,9 10,6; do
     echo "##### Running simulation with (NX, NY)=($1, $2) #####"
 
     # Run
-    cp system/blockMeshDict.orig system/blockMeshDict
+    cp -f system/blockMeshDict.orig system/blockMeshDict
     sed -i "s/NX/$1/; s/NY/$2/" system/blockMeshDict
     ./cluster_run.sh $CORES
 

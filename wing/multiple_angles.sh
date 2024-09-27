@@ -21,7 +21,7 @@ for (( ANGLE=-$MAX_ANGLE; ANGLE<=$MAX_ANGLE; ANGLE+=$ANGLE_STEP )); do
     echo "##### Running simulation with angle=$ANGLE #####"
 
     # Run
-    cp 0.orig/include/initialConditions.orig 0.orig/include/initialConditions
+    cp -f 0.orig/include/initialConditions.orig 0.orig/include/initialConditions
     sed -i "s/SPEED/$SPEED/" 0.orig/include/initialConditions
     sed -i "s/ANGLE/$ANGLE/" 0.orig/include/initialConditions
     ./cluster_run.sh $CORES
