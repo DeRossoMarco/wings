@@ -46,3 +46,5 @@ for (( ANGLE=-$MAX_ANGLE; ANGLE<=$MAX_ANGLE; ANGLE+=$ANGLE_STEP )); do
     echo "$ANGLE $mean_cl $mean_cd" >> "$output_file"
     cd ../wings/wing
 done
+
+./Allclean -a

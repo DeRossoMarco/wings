@@ -17,3 +17,5 @@ for (( CORES=1; CORES<=$MAX_PROCESSES; CORES*=2 )) do
         ./Allclean
         cd ..
     done
+
+./Allclean -a

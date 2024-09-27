@@ -22,3 +22,5 @@ for tuple in 30,20 35,24 25,16 20,12 15,9 10,6; do
     ./Allclean
 done
 IFS=$OLDIFS
+
+./Allclean -a
