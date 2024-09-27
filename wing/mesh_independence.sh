@@ -4,7 +4,7 @@
 
 CORES=$1
 
-mkdir -p ../../mesh_independence
+rm -rf ../../mesh_independence && mkdir ../../mesh_independence
 
 OLDIFS=$IFS
 IFS=','

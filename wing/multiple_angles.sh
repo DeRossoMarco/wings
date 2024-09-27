@@ -7,7 +7,7 @@ MAX_ANGLE=$2
 ANGLE_STEP=$3
 SPEED=$4
 
-mkdir -p ../../multiple_angles
+rm -rf ../../multiple_angles && mkdir ../../multiple_angles
 
 # Output preparation
 file="1/coefficient.dat"
