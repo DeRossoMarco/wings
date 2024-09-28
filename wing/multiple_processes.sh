@@ -6,7 +6,7 @@ MAX_PROCESSES=$1
 
 rm -rf ../../multiple_cores && mkdir -p ../../multiple_cores
 
-for (( CORES=1; CORES<=$MAX_PROCESSES; CORES*=2 )) do
+for (( CORES=2; CORES<=$MAX_PROCESSES; CORES*=2 )) do
         echo "##### Running simulation with $CORES cores #####"
         cp -f system/decomposeParDict.orig system/decomposeParDict
         sed -i "s/CORES/$CORES/" system/decomposeParDict
