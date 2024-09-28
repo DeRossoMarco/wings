@@ -10,7 +10,7 @@ for (( CORES=1; CORES<=$MAX_PROCESSES; CORES*=2 )) do
         echo "##### Running simulation with $CORES cores #####"
         cp -f system/decomposeParDict.orig system/decomposeParDict
         sed -i "s/CORES/$CORES/" system/decomposeParDict
-        ./cluster_run.sh
+        ./cluster_run.sh $CORES
         # Copy results
         cp -rf postProcessing ../../multiple_cores/postProcessing_${CORES}
         ./Allclean
