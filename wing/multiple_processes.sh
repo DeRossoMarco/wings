@@ -14,7 +14,6 @@ for (( CORES=2; CORES<=$MAX_PROCESSES; CORES*=2 )) do
         # Copy results
         cp -rf postProcessing ../../multiple_cores/postProcessing_${CORES}
         ./Allclean
-        cd ..
     done
 
 ./Allclean -a
