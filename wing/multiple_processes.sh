@@ -13,6 +13,7 @@ for (( CORES=2; CORES<=$MAX_PROCESSES; CORES*=2 )) do
         ./cluster_run.sh $CORES
         # Copy results
         cp -rf postProcessing ../../multiple_cores/postProcessing_${CORES}
+        cp -rf log ../../multiple_cores/log_${CORES}
         ./Allclean
     done
 
