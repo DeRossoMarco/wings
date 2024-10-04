@@ -55,6 +55,7 @@ functions
     #include "forceCoeffs"
     #include "yPlus"
     #include "profiling"
+    #include "courantNo"
 }
 
 
