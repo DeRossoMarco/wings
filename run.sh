@@ -8,7 +8,7 @@ NX=25
 NY=16
 MAX_PROCESSES=32
 MAX_ANGLE=20
-ANGLE_STEP=5
+ANGLE_STEP=2
 
 # Variables
 FLAG_ANGLE=false
@@ -102,7 +102,6 @@ if $FLAG_ANGLE; then
     sed -i "s/NX/$NX/; s/NY/$NY/" wing/system/blockMeshDict
     cp wing/system/decomposeParDict.orig wing/system/decomposeParDict
     sed -i "s/CORES/$CORES/" wing/system/decomposeParDict
-    sed -i "s/nProc/$CORES/" wing/cluster_run.sh
     cd wing
     qsub $OPTIONS -pe mpi $CORES multiple_angles.sh $CORES $MAX_ANGLE $ANGLE_STEP $SPEED
 
@@ -113,7 +112,6 @@ elif $FLAG_MESH; then
     sed -i "s/SPEED/$SPEED/" wing/0.orig/include/initialConditions
     cp wing/system/decomposeParDict.orig wing/system/decomposeParDict
     sed -i "s/CORES/$CORES/" wing/system/decomposeParDict
-    sed -i "s/nProc/$CORES/" wing/cluster_run.sh
     cd wing
     qsub $OPTIONS -pe mpi $CORES mesh_independence.sh $CORES
 
