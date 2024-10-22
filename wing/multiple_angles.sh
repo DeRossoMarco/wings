@@ -34,7 +34,6 @@ for (( ANGLE=-$MAX_ANGLE; ANGLE<=$MAX_ANGLE; ANGLE+=$ANGLE_STEP )); do
     cd ../../multiple_angles/postProcessing_${ANGLE}/forceCoeffs
     total_lines=$(wc -l < "$file")
     lines_to_process=100
-    start_line=$((total_lines - lines_to_process + 1))
     data=$(tail -n "$lines_to_process" "$file" | awk '{print $2, $5}')
     min_cd=$(echo "$data" | awk '{print $1}' | sort -n | head -n 1)
     max_cd=$(echo "$data" | awk '{print $1}' | sort -n | tail -n 1)

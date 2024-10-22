@@ -13,6 +13,5 @@ CourantNo
 
     region          region0;
     enabled         true;
-    log             true;
     writeControl    writeTime;
 }
