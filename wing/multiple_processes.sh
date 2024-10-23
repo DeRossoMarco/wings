@@ -12,8 +12,9 @@ for (( CORES=2; CORES<=$MAX_PROCESSES; CORES*=2 )) do
         sed -i "s/CORES/$CORES/" system/decomposeParDict
         ./cluster_run.sh $CORES
         # Copy results
-        cp -rf postProcessing ../../multiple_cores/postProcessing_${CORES}
-        cp -rf log ../../multiple_cores/log_${CORES}
+        mkdir ../../multiple_cores/${CORES}
+        cp -rf postProcessing ../../multiple_cores/${CORES}/postProcessing
+        cp -rf log ../../multiple_cores/${CORES}/log
         ./Allclean
     done
 
