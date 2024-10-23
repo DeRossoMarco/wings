@@ -8,7 +8,7 @@ rm -rf ../../mesh_independence && mkdir ../../mesh_independence
 
 OLDIFS=$IFS
 IFS=','
-for tuple in 30,20 35,24 25,16 20,12 15,9 10,6; do
+for tuple in 35,24 30,20 25,16 20,12 15,9 10,6; do
     set -- $tuple
     echo "##### Running simulation with (NX, NY)=($1, $2) #####"
 
