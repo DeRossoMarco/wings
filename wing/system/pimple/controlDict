@@ -20,9 +20,10 @@ startFrom       latestTime;
 
 stopAt          endTime;
 
-endTime         6;
+endTime         1.1;
 
-deltaT          0.0001;
+//deltaT          0.0001;
+deltaT          0.000005;
 
 //adjustTimeStep  yes;
 
@@ -54,6 +55,8 @@ functions
     #include "yPlus"
     #include "courantNo"
     #include "profiling"
+    #include "surfaceForces"
+    #include "wallShearStress"
 }
 
 

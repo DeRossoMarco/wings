@@ -1,0 +1,24 @@
+surfaceForces
+{
+    type            surfaceFieldValue;
+
+    libs            (fieldFunctionObjects);
+
+    fields          (p wallShearStress);
+    operation       areaIntegrate;
+    regionType      patch;
+    name            wings;
+
+    postOperation   none;
+    weightField     none;
+    writeArea       false;
+    surfaceFormat   vtk;
+
+    writeFields     true;
+    writePrecision  8;
+    writeToFile     true;
+    region          region0;
+    enabled         true;
+    log             false;
+    writeControl    writeTime;
+}

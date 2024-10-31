@@ -123,7 +123,7 @@ castellatedMeshControls
         wing1
         {
             // Surface-wise min and max refinement level
-            level (8 8);
+            level (9 9);
 
             // Optional specification of patch type (default is wall). No
             // constraint types (cyclic, symmetry) etc. are allowed.
@@ -177,10 +177,10 @@ castellatedMeshControls
             mode distance;
             levels
             (
-                (0.3 7) 
-                (0.6 6)
-                (0.9 5)
-                (1.2 4)
+                (0.3 8) 
+                (0.6 7)
+                (0.9 6)
+                (1.2 5)
             );
         }
         /*wing2
@@ -271,7 +271,7 @@ addLayersControls
     }
 
     // Expansion factor for layer mesh
-    expansionRatio 1.1;
+    expansionRatio 1.5;
 
     // Wanted thickness of final added cell layer. If multiple layers
     // is the thickness of the layer furthest away from the wall.
@@ -282,7 +282,7 @@ addLayersControls
     // Minimum thickness of cell layer. If for any reason layer
     // cannot be above minThickness do not add layer.
     // Relative to undistorted size of cell outside layer.
-    minThickness 0.1;
+    minThickness 0.005;
 
     // If points get not extruded do nGrow layers of connected faces that are
     // also not grown. This helps convergence of the layer addition process

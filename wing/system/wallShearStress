@@ -1,0 +1,14 @@
+wallShearStress1
+{
+    type            wallShearStress;
+
+    libs            (fieldFunctionObjects);
+
+    patches         (wings);
+
+    writeToFile     false;
+    region          region0;
+    enabled         true;
+    log             false;
+    writeControl    writeTime;
+}
