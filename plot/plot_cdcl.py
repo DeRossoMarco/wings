@@ -10,7 +10,7 @@ alpha_real, cd_real, cl_real = real_data[:, 0], real_data[:, 1], real_data[:, 2]
 alpha_sim, cd_sim, cl_sim = simulated_data[:, 0], simulated_data[:, 1], simulated_data[:, 2]
 
 # Create a figure and axis for Cd plot
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(12, 8))
 
 # Plot Cd vs alpha
 plt.subplot(1, 2, 1)
