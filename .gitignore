@@ -21,3 +21,6 @@ wing/system/fvSolution
 !wing/Allrun
 !wing/Allclean
 !wing/*.sh
+
+# Results folders
+plot/mesh
