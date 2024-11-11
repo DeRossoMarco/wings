@@ -22,8 +22,8 @@ stopAt          endTime;
 
 endTime         6;
 
-//deltaT          0.0001;
-deltaT          0.000005;
+deltaT          0.0001;
+//deltaT          0.000005;
 
 //adjustTimeStep  yes;
 
