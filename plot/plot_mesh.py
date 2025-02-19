@@ -4,7 +4,7 @@ import re
 import matplotlib.pyplot as plt
 
 # Directory di partenza
-base_dir = 'mesh'
+base_dir = 'one_wing/mesh'
 
 # Dizionario per salvare i risultati
 results = {'Nx': [], 'Ny': [], 'Cd_mean': [], 'Cl_mean': []}
@@ -75,4 +75,4 @@ ax2.legend()
 # Mostriamo il grafico con un layout ottimizzato
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.show()
+plt.savefig('mesh_independence.png', dpi=600)

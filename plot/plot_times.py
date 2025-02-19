@@ -25,6 +25,9 @@ def extract_time_from_log(file_path):
     print('Time not found:', file_path)
     return None
 
+def save_plot_with_high_resolution(filename):
+    plt.savefig(filename, dpi=600)
+
 def main():
     log_files = ['log.snappyHexMesh', 'log.simpleFoam', 'log.pimpleFoam']
     processes_dir = 'one_wing/processes'
@@ -61,7 +64,7 @@ def main():
     plt.xscale('log')
     plt.yscale('log')
     plt.xticks(process_counts, process_counts)
-    plt.savefig('mesh_time.png')
+    save_plot_with_high_resolution('mesh_time.png')
 
     plt.figure()
     plt.plot(process_counts, simple_times, label='SimpleFoam Time')
@@ -77,7 +80,7 @@ def main():
     plt.xscale('log')
     plt.yscale('log')
     plt.xticks(process_counts, process_counts)
-    plt.savefig('simple_pimple_time.png')
+    save_plot_with_high_resolution('simple_pimple_time.png')
 
     plt.figure()
     plt.plot(process_counts, total_times, label='Total Time')
@@ -92,7 +95,7 @@ def main():
     plt.xscale('log')
     plt.yscale('log')
     plt.xticks(process_counts, process_counts)
-    plt.savefig('total_time.png')
+    save_plot_with_high_resolution('total_time.png')
 
     # Plot speedup and ideal scalability
     reference_time = total_times[process_counts.index(2)]
@@ -113,7 +116,7 @@ def main():
     plt.xscale('log')
     plt.yscale('log')
     plt.xticks(process_counts, process_counts)
-    plt.savefig('speedup.png')
+    save_plot_with_high_resolution('speedup.png')
 
 if __name__ == '__main__':
     main()
