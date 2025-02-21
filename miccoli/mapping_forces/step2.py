@@ -24,7 +24,7 @@ def load_csv_data(csv_file):
             forces.append([float(row[i]) for i in shear_indices])
             pressures.append(float(row[pressure_index]))
 
-    coordinates = np.array(coordinates) * 10
+    coordinates = np.array(coordinates)
     forces = np.array(forces)
     pressures = np.array(pressures)
 
@@ -56,14 +56,14 @@ def parse_inp(file_path, kdtree, forces, pressures):
     i = 0
     new_lines = []
 
-    seed = 0.5
-    method = "Center"
-    #method = "Nodes"
+    seed = 0.01
+    #method = "Center"
+    method = "Nodes"
 
     while i < len(lines):
         line = lines[i].strip().lower()
 
-        if line.startswith("** part instance: wing-1"):
+        if line.startswith("** part instance: wing-2"):
             new_lines.append(lines[i])
             i += 1
             new_lines.append(lines[i])
@@ -185,10 +185,10 @@ def parse_inp(file_path, kdtree, forces, pressures):
                         pressure2, force2 = find_nearest_data(kdtree, forces, pressures, np.array([x[1], y[1], z[1]]))
                         pressure3, force3 = find_nearest_data(kdtree, forces, pressures, np.array([x[2], y[2], z[2]]))
 
-                        pressure = np.mean([pressure1, pressure2, pressure3])
-                        force = np.mean([force1, force2, force3])
+                        pressure = (pressure1 + pressure2 + pressure3) / 3
+                        force = (force1 + force2 + force3) / 3
                     
-                    pressure_force = pressure * face_area * np.array([0, 0, 1])
+                    pressure_force = pressure * face_area
                     shear_force = force * face_area
 
                     total_pressure_force += pressure_force
@@ -203,7 +203,7 @@ def parse_inp(file_path, kdtree, forces, pressures):
                         x, y, z = force / f_norm
                         new_lines.append(f"** Name: S_{number}_{k+1}   Type: Surface traction\n")
                         new_lines.append(f"*Dsload\n")
-                        new_lines.append(f"S_{number}_{k+1}, TRSHR, {f_norm}, {x}, {y}, {z}\n")
+                        new_lines.append(f"S_{number}_{k+1}, TRSHR, {f_norm}, {-x}, {-y}, {-z}\n")
             
             continue
         
@@ -215,7 +215,8 @@ def parse_inp(file_path, kdtree, forces, pressures):
 
     with open("integrate.csv", mode="r") as file:
         reader = csv.reader(file)
-        first_row = next(next(reader))
+        header = next(reader)
+        first_row = next(reader)
         input_values = np.array([float(val) for val in first_row])
         
     pressure_diff = abs(total_pressure_force - input_values[0])
