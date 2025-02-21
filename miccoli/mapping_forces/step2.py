@@ -56,6 +56,10 @@ def parse_inp(file_path, kdtree, forces, pressures):
     i = 0
     new_lines = []
 
+    seed = 0.5
+    method = "Center"
+    #method = "Nodes"
+
     while i < len(lines):
         line = lines[i].strip().lower()
 
@@ -149,6 +153,8 @@ def parse_inp(file_path, kdtree, forces, pressures):
             elements_idx_map = {val: idx for idx, val in enumerate(elements["idx"])}
             nodes_idx_map = {val: idx for idx, val in enumerate(nodes["idx"])}
 
+            total_pressure_force = 0.0
+            total_shear_force = np.array([0.0, 0.0, 0.0])
             
             for k in range(4):
 
@@ -167,7 +173,27 @@ def parse_inp(file_path, kdtree, forces, pressures):
 
                     face_center = np.array([np.mean(x), np.mean(y), np.mean(z)])
 
-                    pressure, force = find_nearest_data(kdtree, forces, pressures, face_center)
+                    v1 = np.array([x[1] - x[0], y[1] - y[0], z[1] - z[0]])
+                    v2 = np.array([x[2] - x[0], y[2] - y[0], z[2] - z[0]])
+                    face_area = 0.5 * np.linalg.norm(np.cross(v1, v2))
+                    
+                    if method == "Center":
+                        pressure, force = find_nearest_data(kdtree, forces, pressures, face_center)
+                    
+                    elif method == "Nodes":
+                        pressure1, force1 = find_nearest_data(kdtree, forces, pressures, np.array([x[0], y[0], z[0]]))
+                        pressure2, force2 = find_nearest_data(kdtree, forces, pressures, np.array([x[1], y[1], z[1]]))
+                        pressure3, force3 = find_nearest_data(kdtree, forces, pressures, np.array([x[2], y[2], z[2]]))
+
+                        pressure = np.mean([pressure1, pressure2, pressure3])
+                        force = np.mean([force1, force2, force3])
+                    
+                    pressure_force = pressure * face_area * np.array([0, 0, 1])
+                    shear_force = force * face_area
+
+                    total_pressure_force += pressure_force
+                    total_shear_force += shear_force
+
                     f_norm = np.linalg.norm(force)
                     
                     new_lines.append(f"** Name: P_{number}_{k+1}   Type: Pressure\n")
@@ -184,8 +210,20 @@ def parse_inp(file_path, kdtree, forces, pressures):
         new_lines.append(lines[i])
         i += 1
 
-    with open("new.inp", 'w') as file:
+    with open("out.inp", 'w') as file:
         file.writelines(new_lines)
+
+    with open("integrate.csv", mode="r") as file:
+        reader = csv.reader(file)
+        first_row = next(next(reader))
+        input_values = np.array([float(val) for val in first_row])
+        
+    pressure_diff = abs(total_pressure_force - input_values[0])
+    shear_diff = np.abs(total_shear_force - input_values[1:4])
+
+    with open("error.csv", mode="a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([method] + [seed] + [pressure_diff] + shear_diff.tolist())
     
     return data
 
@@ -194,5 +232,5 @@ if __name__ == "__main__":
     csv_file = "forces.csv"
     kdtree, forces, pressures = load_csv_data(csv_file)
 
-    inp_file = "test.inp"
+    inp_file = "in.inp"
     data = parse_inp(inp_file, kdtree, forces, pressures)
