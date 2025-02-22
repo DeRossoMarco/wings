@@ -57,6 +57,7 @@ functions
     #include "profiling"
     #include "surfaceForces"
     #include "wallShearStress"
+    #include "forces"
 }
 
 
